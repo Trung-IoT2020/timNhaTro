@@ -75,6 +75,8 @@ create table PHONGTRO
 	giaTien int(20) NOT NULL, 
 	ghichuPhong VARCHAR(50) NULL
 )
+alter table <table cần thêm>add constraint <tên khóa ngoại> 
+foreign key (<cột của table hiện tại>) references <tên table cần liên kết>(<tên cột cần liên kết>)
 create table HOPDONG
 (
 	ma_HOPDONG int(20) PRIMARY KEY , 
@@ -112,7 +114,9 @@ create table DANGBAI_CHUTRO
 create table DANGBAI
 (
 	id_BAIVIET int(20) primary key,
-	idKHACHHANG int(20) FOREIGN KEY REFERENCES KHACHHANG(idKHACHHANG),
+	id_BAIVIETKHACHHANG int(20) FOREIGN KEY REFERENCES KHACHHANG(idKHACHHANG),
+	id_BAIVIETCHUTRO int(20) FOREIGN KEY REFERENCES CHUTRO(idCHUTRO),
+idKHACHHANG int(20) FOREIGN KEY REFERENCES KHACHHANG(idKHACHHANG),
 	idCHUTRO int(20) FOREIGN KEY REFERENCES CHUTRO(idCHUTRO),
 	thoigianDangBai DATETIME NOT NULL,
 	ghichuBAIDANG VARCHAR(25) NULL
