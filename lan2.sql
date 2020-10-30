@@ -1,0 +1,21 @@
+create table KHACHHANG
+(
+	id_KHACHHANG int primary key , 
+	taikhoan_KHACHHANG VARCHAR(25) NOT NULL ,
+	pass_KHACHHANG VARCHAR(25)NOT NULL,
+	hoten_KHACHHANG VARCHAR(25)NOT NULL,
+	namsinh_KHACHHANG DATETIME NOT NULL,
+	cmnd_KHACHHANG int NOT NULL,
+	sdt_KHACHHANG int NOT NULL ,
+	diachi_KHACHHANG VARCHAR(25) NOT NULL,
+	chutro bit NULL
+)
+
+create table DANGNHAP
+(
+	id_taikhoan int primary key,
+	id_KHACHHANG int ,
+	hoten_KHACHHANG VARCHAR(25) NOT NULL,
+	DADANGNHAP BIT NULL
+)
+
